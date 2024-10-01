@@ -1,13 +1,13 @@
-package dev.aitor.app;
+package dev.aitor.pc_builder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppApplication {
+public class PcBuilderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppApplication.class, args);
+		SpringApplication.run(PcBuilderApplication.class, args);
 	}
 
 }
