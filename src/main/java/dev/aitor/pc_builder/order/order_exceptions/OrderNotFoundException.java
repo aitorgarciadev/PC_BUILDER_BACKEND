@@ -1,4 +1,4 @@
-package dev.aitor.pc_builder.order_items.order_items_exception;
+package dev.aitor.pc_builder.order.order_exceptions;
 
 public class OrderNotFoundException extends OrderException {
 

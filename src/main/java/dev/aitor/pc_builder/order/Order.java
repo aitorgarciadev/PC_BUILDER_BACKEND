@@ -2,7 +2,7 @@ package dev.aitor.pc_builder.order;
 
 import java.util.List;
 
-import dev.aitor.pc_builder.order_item.OrderItem;
+import dev.aitor.pc_builder.order_items.OrderItem;
 import dev.aitor.pc_builder.tracking.Tracking;
 import dev.aitor.pc_builder.user.User;
 
