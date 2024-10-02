@@ -3,7 +3,7 @@ import dev.aitor.pc_builder.category.Category;
 import dev.aitor.pc_builder.category.CategoryDTO;
 import dev.aitor.pc_builder.category.CategoryRepository;
 import dev.aitor.pc_builder.category.category_exceptions.CategoryNotFoundException;
-import dev.aitor.pc_builder.category.product_exceptions.ProductNotFoundException;
+import dev.aitor.pc_builder.product.product_exceptions.ProductNotFoundException;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;

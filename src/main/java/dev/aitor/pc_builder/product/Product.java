@@ -3,7 +3,7 @@ package dev.aitor.pc_builder.product;
 import java.util.List;
 
 import dev.aitor.pc_builder.category.Category;
-import dev.aitor.pc_builder.order_item.OrderItem;
+import dev.aitor.pc_builder.order_items.OrderItem;
 
 import jakarta.persistence.*;
 import lombok.*;
