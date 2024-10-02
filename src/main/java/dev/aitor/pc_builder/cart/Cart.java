@@ -2,7 +2,7 @@ package dev.aitor.pc_builder.cart;
 
 import java.util.List;
 
-import dev.aitor.pc_builder.cart_item.CartItem;
+import dev.aitor.pc_builder.carts_item.CartItem;
 import dev.aitor.pc_builder.user.User;
 
 import jakarta.persistence.*;

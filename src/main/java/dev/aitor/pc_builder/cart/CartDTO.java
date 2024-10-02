@@ -2,7 +2,7 @@ package dev.aitor.pc_builder.cart;
 
 import java.util.List;
 
-import dev.aitor.pc_builder.cart_item.CartItemDTO;
+import dev.aitor.pc_builder.carts_item.CartItemDTO;
 import dev.aitor.pc_builder.user.UserDTO;
 
 import lombok.*;
