@@ -1,6 +1,6 @@
 package dev.aitor.pc_builder.order;
 
-import dev.aitor.pc_builder.order_item.OrderItemDTO;
+import dev.aitor.pc_builder.order_items.OrderItemDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
