@@ -1,4 +1,4 @@
-package dev.aitor.pc_builder.config.auditing;
+package dev.aitor.pc_builder.config;
 
 import java.util.Arrays;
 
