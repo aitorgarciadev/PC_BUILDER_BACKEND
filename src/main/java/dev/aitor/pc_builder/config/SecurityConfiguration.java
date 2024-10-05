@@ -16,16 +16,16 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.web.cors.CorsConfiguration;
 
-import static dev.aitor.pc_builder.user.Permission.ADMIN_CREATE;
-import static dev.aitor.pc_builder.user.Permission.ADMIN_DELETE;
+import static  dev.aitor.pc_builder.user.Permission.ADMIN_CREATE;
+import static  dev.aitor.pc_builder.user.Permission.ADMIN_DELETE;
 import static dev.aitor.pc_builder.user.Permission.ADMIN_READ;
-import static dev.aitor.pc_builder.user.Permission.ADMIN_UPDATE;
-import static dev.aitor.pc_builder.user.Permission.MANAGER_CREATE;
-import static dev.aitor.pc_builder.user.Permission.MANAGER_DELETE;
-import static dev.aitor.pc_builder.user.Permission.MANAGER_READ;
-import static dev.aitor.pc_builder.user.Permission.MANAGER_UPDATE;
-import static dev.aitor.pc_builder.user.Role.ADMIN;
-import static dev.aitor.pc_builder.user.Role.MANAGER;
+import static  dev.aitor.pc_builder.user.Permission.ADMIN_UPDATE;
+import static  dev.aitor.pc_builder.user.Permission.MANAGER_CREATE;
+import static  dev.aitor.pc_builder.user.Permission.MANAGER_DELETE;
+import static  dev.aitor.pc_builder.user.Permission.MANAGER_READ;
+import static  dev.aitor.pc_builder.user.Permission.MANAGER_UPDATE;
+import static  dev.aitor.pc_builder.user.Role.ADMIN;
+import static  dev.aitor.pc_builder.user.Role.MANAGER;
 import static org.springframework.http.HttpMethod.DELETE;
 import static org.springframework.http.HttpMethod.GET;
 import static org.springframework.http.HttpMethod.POST;
@@ -80,7 +80,7 @@ public class SecurityConfiguration {
                 configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
                 configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
                 configuration.setAllowedHeaders(
-                                Arrays.asList("Authorization", "Content-Type", "Accept", "X-Requested-With"));
+                                Arrays.asList("Authorization", "Content-Type", "Accept", "X-Requested-With", "Product-ID"));
                 configuration.setExposedHeaders(Arrays.asList("Authorization"));
                 UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
                 source.registerCorsConfiguration("/**", configuration);
