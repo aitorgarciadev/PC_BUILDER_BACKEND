@@ -22,9 +22,6 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import java.util.*;
-import java.util.stream.Collectors;
-
 @Service
 public class OrderService {
 
@@ -203,7 +200,7 @@ public class OrderService {
         ProductDTO productDTO = new ProductDTO(
                 product.getId(),
                 product.getName(),
-                product.getImageHash(),
+                Optional.ofNullable(product.getImageHash()),
                 product.getDescription(),
                 product.getPrice(),           
                 discountedPrice,             
