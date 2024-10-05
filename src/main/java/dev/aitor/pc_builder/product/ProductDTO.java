@@ -5,6 +5,7 @@ import dev.aitor.pc_builder.category.CategoryDTO;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 import java.util.Date;
+import java.util.Optional;
 
 
 @Data
@@ -14,7 +15,7 @@ public class ProductDTO {
     
     private Long id;
     private String name;
-    private String imageHash;
+    private Optional<String> imageHash;
     private String description;
     @Positive(message = "Price must be positive")
     private float price;

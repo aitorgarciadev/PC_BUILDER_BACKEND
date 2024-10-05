@@ -1,4 +1,5 @@
 package dev.aitor.pc_builder.product;
+
 import dev.aitor.pc_builder.category.Category;
 import dev.aitor.pc_builder.category.CategoryDTO;
 import dev.aitor.pc_builder.category.CategoryRepository;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.Calendar;
 import java.util.Date;
@@ -108,7 +110,7 @@ public class ProductService {
 
     private void updateProductFields(Product product, ProductDTO productDto) {
         product.setName(productDto.getName());
-        product.setImageHash(productDto.getImageHash());
+        product.setImageHash(productDto.getImageHash().get());
         product.setDescription(productDto.getDescription());
         product.setPrice(productDto.getPrice());
         product.setStock(productDto.getStock());
@@ -134,7 +136,7 @@ public class ProductService {
     private Product mapToEntity(ProductDTO dto) {
         Product product = new Product();
         product.setName(dto.getName());
-        product.setImageHash(dto.getImageHash());
+        product.setImageHash(dto.getImageHash().get());
         product.setDescription(dto.getDescription());
         product.setPrice(dto.getPrice());
         product.setStock(dto.getStock());
@@ -157,7 +159,7 @@ public class ProductService {
         return new ProductDTO(
                 product.getId(),
                 product.getName(),
-                product.getImageHash(),
+                Optional.ofNullable(product.getImageHash()),
                 product.getDescription(),
                 product.getPrice(),
                 product.getPrice(),  
