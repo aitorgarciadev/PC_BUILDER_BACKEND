@@ -2,59 +2,51 @@
 INSERT INTO users (user_id, email, password, role) VALUES (default, 'user@gmail.com', '$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO', 'USER');
 INSERT INTO users (user_id, email, password, role) VALUES (default, 'admin@gmail.com', '$2a$12$8LegtLQWe717tIPvZeivjuqKnaAs5.bm0Q05.5GrAmcKzXw2NjoUO', 'ADMIN');
 
-
 -- Profiles
 INSERT INTO profiles (first_name, last_name, phone_number, street, city, region, postal_code, country, user_id, is_shipping, is_subscribed) VALUES
-('Carlos', 'Gómez', '5551234567', '123 Avenida Principal', 'Ciudad de México', 'CDMX', '01000', 'México', 1, false, false),
-('Sofía', 'Martínez', '5559876543', '456 Calle Secundaria', 'Guadalajara', 'Jalisco', '44100', 'México', 2, true, true);
+('Lucas', 'Hernández', '5557654321', '789 Calle Nueva', 'Monterrey', 'Nuevo León', '64000', 'México', 1, false, true),
+('Valentina', 'García', '5551239876', '321 Calle Vieja', 'Puebla', 'Puebla', '72000', 'México', 2, true, false);
 
 -- Categories
-INSERT INTO categories (category_id, name, highlights, image_hash) VALUES (default, 'Animation', false, 'http://localhost:5173/src/assets/img/Carrousel/animation.jpg'),
- (default, 'Anime & Manga', true, 'http://localhost:5173/src/assets/img/Carrousel/anime.jpg'),
- (default, 'Marvel', true, 'http://localhost:5173/src/assets/img/Carrousel/marvel.jpg'),
- (default, 'DC Comics', false, 'http://localhost:5173/src/assets/img/Carrousel/dc-comics.jpg');
+INSERT INTO categories (category_id, name, highlights, image_hash) VALUES 
+(default, 'Motherboard', false, 'http://localhost:5173/src/assets/img/Carrousel/motherboard.jpg'),
+(default, 'CPU', true, 'http://localhost:5173/src/assets/img/Carrousel/cpu.jpg'),
+(default, 'GPU', true, 'http://localhost:5173/src/assets/img/Carrousel/gpu.jpg'),
+(default, 'RAM', false, 'http://localhost:5173/src/assets/img/Carrousel/ram.jpg'),
+(default, 'Storage', true, 'http://localhost:5173/src/assets/img/Carrousel/storage.jpg'),
+(default, 'Power Supply', false, 'http://localhost:5173/src/assets/img/Carrousel/power_supply.jpg'),
+(default, 'Cooling System', true, 'http://localhost:5173/src/assets/img/Carrousel/cooling.jpg'),
+(default, 'Case', false, 'http://localhost:5173/src/assets/img/Carrousel/case.jpg');
 
-
- -- Additional Products
+-- Additional Products
 INSERT INTO products (product_id, name, image, description, price, stock, category_id, discount, created_at) VALUES
-(default, 'Spider-Man', 'spiderman.jpg', 'A collectible Spider-Man figure from Marvel.', 12.99, 50, 3, 10, '2024-01-01 10:00:00'),
-(default, 'Batman', 'batman.jpg', 'A collectible Batman figure from DC Comics.', 11.99, 40, 4, 20, '2024-02-01 11:30:00'),
-(default, 'Goku Super Saiyan', 'goku.jpg', 'Goku in his Super Saiyan form from Dragon Ball Z.', 14.99, 0, 2, 0, '2024-03-01 12:00:00'),
-(default, 'Sailor Moon', 'sailormoon.jpg', 'Sailor Moon figure from the classic anime series.', 13.99, 20, 2, 0, '2024-01-15 09:00:00'),
-(default, 'Mickey Mouse', 'mickey.jpg', 'Classic Mickey Mouse collectible figure.', 9.99, 60, 1, 0, '2024-01-10 14:00:00'),
-(default, 'Iron Man', 'ironman.jpg', 'Iron Man figure with metallic finish.', 15.99, 25, 3, 0, '2024-01-20 16:45:00'),
-(default, 'Wonder Woman', 'wonderwoman.jpg', 'Wonder Woman figure from DC Comics.', 12.49, 35, 4, 0, '2024-02-05 13:15:00'),
-(default, 'Naruto Uzumaki', 'naruto.jpg', 'Naruto figure in his classic outfit.', 13.49, 45, 2, 0, '2024-01-25 11:45:00'),
-(default, 'SpongeBob SquarePants', 'spongebob.jpg', 'SpongeBob figure from the animated series.', 10.99, 50, 1, 0, '2024-03-01 10:30:00'),
-(default, 'Captain America', 'captainamerica.jpg', 'Captain America with his shield.', 12.99, 30, 3, 0, '2024-03-05 15:00:00'),
-(default, 'Thanos', 'thanos.jpg', 'Thanos figure with Infinity Gauntlet.', 16.99, 15, 3, 0, '2024-02-20 17:20:00'),
-(default, 'Joker', 'joker.jpg', 'Joker figure from DC Comics.', 11.49, 40, 4, 0, '2024-01-18 12:30:00'),
-(default, 'Luffy', 'luffy.jpg', 'Monkey D. Luffy from One Piece.', 14.49, 35, 2, 0, '2024-02-25 09:15:00'),
-(default, 'Elsa', 'elsa.jpg', 'Elsa figure from Frozen.', 13.99, 25, 1, 0, '2024-02-10 13:50:00'),
-(default, 'Deadpool', 'deadpool.jpg', 'Deadpool in a classic pose.', 12.99, 50, 3, 0, '2024-02-01 12:10:00'),
-(default, 'Superman', 'superman.jpg', 'Superman figure from DC Comics.', 12.99, 45, 4, 0, '2024-03-01 08:45:00'),
-(default, 'Vegeta', 'vegeta.jpg', 'Vegeta from Dragon Ball Z.', 14.99, 30, 2, 0, '2024-01-05 10:10:00'),
-(default, 'Pikachu', 'pikachu.jpg', 'Pikachu figure from Pokémon.', 11.99, 60, 2, 0, '2024-01-15 14:50:00'),
-(default, 'Harley Quinn', 'harleyquinn.jpg', 'Harley Quinn figure from DC Comics.', 12.49, 35, 4, 40, '2024-02-18 10:20:00'),
-(default, 'Black Panther', 'blackpanther.jpg', 'Black Panther figure from Marvel.', 13.99, 25, 3, 40, '2024-03-10 11:30:00'),
-(default, 'Thor', 'thor.jpg', 'Thor figure with Mjolnir.', 15.99, 20, 3, 0, '2024-03-01 08:45:00'),
-(default, 'Hulk', 'hulk.jpg', 'Hulk figure from Marvel.', 14.99, 30, 3, 40, '2024-03-01 08:45:00'),
-(default, 'Groot', 'groot.jpg', 'Groot figure from Guardians of the Galaxy.', 12.99, 40, 3, 40, NOW()),
-(default, 'Fluttershy', 'fluttershy.jpg', 'Fluttershy figure from My Little Pony.', 11.99, 50, 1, 20, NOW());
-
-
+(default, 'ASUS ROG Strix B550-F', 'motherboard_asus.jpg', 'High-performance motherboard with robust features.', 199.99, 25, 1, 10, '2024-01-01 10:00:00'),
+(default, 'Intel Core i9-11900K', 'cpu_intel.jpg', 'Powerful 11th Gen Intel Core processor.', 499.99, 15, 2, 0, '2024-02-01 11:30:00'),
+(default, 'NVIDIA GeForce RTX 3080', 'gpu_nvidia.jpg', 'High-end graphics card for gamers.', 799.99, 10, 3, 15, '2024-03-01 12:00:00'),
+(default, 'Corsair Vengeance LPX 16GB', 'ram_corsair.jpg', '16GB RAM module for fast performance.', 79.99, 50, 4, 20, '2024-01-15 09:00:00'),
+(default, 'Samsung 970 EVO 1TB', 'storage_samsung.jpg', '1TB NVMe SSD for quick data access.', 129.99, 30, 5, 0, '2024-01-10 14:00:00'),
+(default, 'EVGA 600 W1 80+', 'power_supply_evga.jpg', '600W power supply with great reliability.', 49.99, 60, 6, 10, '2024-01-20 16:45:00'),
+(default, 'Cooler Master Hyper 212', 'cooling_coolermaster.jpg', 'Air cooler for effective CPU cooling.', 39.99, 35, 7, 5, '2024-02-05 13:15:00'),
+(default, 'NZXT H510', 'case_nzxt.jpg', 'Stylish mid-tower case with good airflow.', 69.99, 25, 8, 15, '2024-01-25 11:45:00'),
+(default, 'AMD Ryzen 7 5800X', 'cpu_amd.jpg', 'High-performance AMD processor.', 399.99, 20, 2, 0, '2024-03-05 15:00:00'),
+(default, 'G.Skill Ripjaws V 32GB', 'ram_gskill.jpg', '32GB RAM for demanding applications.', 139.99, 15, 4, 10, '2024-03-10 11:30:00'),
+(default, 'Western Digital Blue 2TB', 'storage_wd.jpg', '2TB HDD for large storage needs.', 54.99, 40, 5, 0, '2024-02-20 17:20:00'),
+(default, 'Corsair RM750x', 'power_supply_corsair.jpg', '750W power supply for high-performance PCs.', 129.99, 10, 6, 20, '2024-02-01 12:10:00'),
+(default, 'Pure Rock 2', 'cooling_bequiet.jpg', 'CPU cooler for silent operation.', 49.99, 20, 7, 5, '2024-02-25 09:15:00'),
+(default, 'Thermaltake V200', 'case_thermaltake.jpg', 'RGB mid-tower case with tempered glass.', 89.99, 25, 8, 10, '2024-02-10 13:50:00'),
+(default, 'MSI Gaming X Trio RTX 3070', 'gpu_msi.jpg', 'Powerful graphics card for gaming.', 599.99, 5, 3, 0, '2024-03-01 08:45:00'),
+(default, 'ASRock B450M Pro4', 'motherboard_asrock.jpg', 'Affordable motherboard with essential features.', 89.99, 40, 1, 15, '2024-01-05 10:10:00'),
+(default, 'HyperX Fury 8GB', 'ram_hyperx.jpg', '8GB RAM module for basic tasks.', 39.99, 60, 4, 0, '2024-01-15 14:50:00'),
+(default, 'Crucial MX500 500GB', 'storage_crucial.jpg', '500GB SSD for quick boot times.', 59.99, 30, 5, 20, '2024-02-18 10:20:00');
 
 -- Orders
 INSERT INTO orders (order_id, status, total_price, total_items, is_paid, user_id) VALUES
-(default, 'PENDING', 19.99, 1, true, 1),
-(default, 'PENDING', 89.99, 5, true, 2);
+(default, 'PENDING', 299.99, 1, true, 1),
+(default, 'PENDING', 629.99, 3, true, 2);
 
-
---  OrderItems
-INSERT INTO order_items (order_item_id, quantity, order_id, product_id)
-VALUES (default, 2, 1, 1);
-INSERT INTO order_items (order_item_id, quantity, order_id, product_id)
-VALUES (default, 3, 1, 1);
+-- OrderItems
+INSERT INTO order_items (order_item_id, quantity, order_id, product_id) VALUES (default, 1, 1, 1);
+INSERT INTO order_items (order_item_id, quantity, order_id, product_id) VALUES (default, 2, 1, 3);
 
 -- Reviews
 INSERT INTO reviews (review_id, rating, order_item_id, user_id) VALUES (default, 5, 1, 1);
