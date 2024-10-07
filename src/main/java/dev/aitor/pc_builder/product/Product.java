@@ -25,8 +25,8 @@ public class Product {
     private Long id;
     @NonNull
     private String name;
-    @Column(name = "image")
-    private String imageHash;
+    // @Column(name = "image", nullable = true)
+    // private String imageHash;
     @NonNull
     private String description;
     private float price;

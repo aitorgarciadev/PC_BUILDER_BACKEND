@@ -15,7 +15,7 @@ public class ProductDTO {
     
     private Long id;
     private String name;
-    private Optional<String> imageHash;
+    // private Optional<String> imageHash;
     private String description;
     @Positive(message = "Price must be positive")
     private float price;

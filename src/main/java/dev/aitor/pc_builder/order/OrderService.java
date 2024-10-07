@@ -200,7 +200,7 @@ public class OrderService {
         ProductDTO productDTO = new ProductDTO(
                 product.getId(),
                 product.getName(),
-                Optional.ofNullable(product.getImageHash()),
+                // Optional.ofNullable(product.getImageHash()),
                 product.getDescription(),
                 product.getPrice(),           
                 discountedPrice,             

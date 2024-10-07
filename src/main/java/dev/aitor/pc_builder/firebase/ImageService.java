@@ -32,7 +32,7 @@ public class ImageService {
 
         storage.create(blobInfo, Files.readAllBytes(file.toPath()));
 
-        String DOWNLOAD_URL = "https://firebasestorage.googleapis.com/v0/b/pcbuilder-c4c11.appspot.com/o/%s?alt=media";
+        String DOWNLOAD_URL = "https://firebasestorage.googleapis.com/v0/b/pcbuilder-c4c11.appspot.com/o/?alt=media";
         return String.format(DOWNLOAD_URL, URLEncoder.encode(fileName, StandardCharsets.UTF_8));
     }
 
@@ -79,7 +79,7 @@ public class ImageService {
 
             storage.create(blobInfo, decodedBytes);
 
-            String DOWNLOAD_URL = "https://firebasestorage.googleapis.com/v0/b/pcbuilder-c4c11.appspot.com/o/%s?alt=media";
+            String DOWNLOAD_URL = "https://firebasestorage.googleapis.com/v0/b/pcbuilder-c4c11.appspot.com/o/?alt=media";
             return Optional.of(String.format(DOWNLOAD_URL, URLEncoder.encode(fileName, StandardCharsets.UTF_8)));
         } catch (IOException e) {
             e.printStackTrace();

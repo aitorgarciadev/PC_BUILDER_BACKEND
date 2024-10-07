@@ -1,6 +1,5 @@
 package dev.aitor.pc_builder.product;
 
-import dev.aitor.pc_builder.firebase.ImageService;
 import dev.aitor.pc_builder.product.product_exceptions.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("${api-endpoint}/products")
@@ -23,31 +21,16 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @Autowired
-    private ImageService imageService;
-
     @PostMapping
-    @PreAuthorize("hasAuthority('admin:create')")
     public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody ProductDTO productDto) {
         Long categoryId = productDto.getCategory() != null ? productDto.getCategory().getId() : null;
 
         if (categoryId == null) {
             throw new IllegalArgumentException("Category ID cannot be null");
         }
-           try {
-            String imageUrl = null;
-            if (productDto.getImageHash().isPresent()) {
-                imageUrl = imageService.uploadBase64(productDto.getImageHash().get()).orElseThrow(() ->
-                    new IllegalArgumentException("Failed to upload image"));
-            }
-            productDto.setImageHash(Optional.ofNullable(imageUrl));
-            ProductDTO createdProduct = productService.createProduct(productDto, categoryId);
 
-     return ResponseEntity.status(HttpStatus.CREATED).body(createdProduct);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(null);
-        }
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(productService.createProduct(productDto, categoryId));
     }
 
     @GetMapping
@@ -86,25 +69,9 @@ public class ProductController {
     @PutMapping("/{id}")
     @PreAuthorize("hasAuthority('admin:update')")
     public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id,
-                 @Valid @RequestBody ProductDTO productDto) {
-    Long categoryId = productDto.getCategory() != null ? productDto.getCategory().getId() : null;
-    if (categoryId == null) {
-        throw new IllegalArgumentException("Category ID cannot be null");
+            @Valid @RequestBody ProductDTO productDto) {
+        return ResponseEntity.ok(productService.updateProduct(id, productDto));
     }
-       try {
-        String imageUrl = null;
-        if (productDto.getImageHash().isPresent()) {
-            imageUrl = imageService.uploadBase64(productDto.getImageHash().get()).orElseThrow(() -> 
-                new IllegalArgumentException("Failed to upload image"));
-        }
-        productDto.setImageHash(Optional.ofNullable(imageUrl));
-        ProductDTO updatedProduct = productService.updateProduct(id, productDto);
-        return ResponseEntity.ok(updatedProduct);
-    } catch (Exception e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(null);
-    }
-}
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('admin:delete')")
